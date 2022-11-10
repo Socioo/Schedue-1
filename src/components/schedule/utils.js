@@ -2,38 +2,43 @@ import { Dropdown, Menu, Space } from "antd";
 import { Link } from "react-router-dom";
 import { MoreOutlined, DeleteOutlined, EditOutlined } from '@ant-design/icons';
 
-export const columns = (onEditClick) => [
+export const columns = [
   {
-    title: 'Name',
-    dataIndex: 'name',
+    title: 'Date',
+    dataIndex: 'date',
+    key: '_id',
+  },
+  {
+    title: 'Employee Name',
+    dataIndex: 'nemployee-name',
     key: 'name',
     render: (text) => <Link to="#">{text}</Link>,
   },
   {
-    title: 'Email',
-    dataIndex: 'email',
-    key: 'email',
+    title: 'Department',
+    dataIndex: 'department',
+    key: 'department',
   },
   {
-    title: 'Phone No.',
-    dataIndex: 'phone',
-    key: 'phone',
+    title: 'Designation',
+    dataIndex: 'designation',
+    key: 'designation',
   },
   {
-    title: 'Address',
-    dataIndex: 'address',
-    key: 'address',
+    title: 'Description',
+    dataIndex: 'description',
+    key: 'description',
   },
   {
     title: 'Action',
-    render: (row) => (
+    render: () => (
       <Space size="middle">
         <Dropdown overlay={(
           <Menu
             items={[
               {
                 key: '1',
-                label: <span onClick={() => onEditClick(row)}><EditOutlined />&nbsp;&nbsp;&nbsp;Edit</span>,
+                label: <span><EditOutlined />&nbsp;&nbsp;&nbsp;Edit</span>,
               },
               {
                 key: '2',
