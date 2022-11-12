@@ -1,4 +1,6 @@
-import { Button, Form, Input, Modal } from 'antd';
+import { Button, Form, DatePicker, Input, Modal } from "antd";
+
+const dateFormat = 'DD/MM/YYYY';
 
 const layout = {
   labelCol: {
@@ -12,51 +14,40 @@ const layout = {
 /* eslint-disable no-template-curly-in-string */
 
 const validateMessages = {
-  required: '${label} is required!',
+  required: "${label} is required!",
   types: {
-    email: '${label} is not a valid email!',
-    number: '${label} is not a valid number!',
+    email: "${label} is not a valid email!",
+    number: "${label} is not a valid number!",
   },
   number: {
-    range: '${label} must be between ${min} and ${max}',
+    range: "${label} must be between ${min} and ${max}",
   },
 };
 /* eslint-enable no-template-curly-in-string */
-
 
 const AddScheduleModal = ({ data, loading, open, onClose, onSave }) => {
   const [form] = Form.useForm();
 
   if (!open) return null;
   return (
-    <Modal title="Add Schedule" visible={open} footer={null} onOk={onClose} onCancel={onClose}>
-      <Form shouldUpdate form={form} {...layout} name="nest-messages" onFinish={onSave} validateMessages={validateMessages}>
+    <Modal
+      title="Add Schedule"
+      visible={open}
+      footer={null}
+      onOk={onClose}
+      onCancel={onClose}
+    >
+      <Form
+        shouldUpdate
+        form={form}
+        {...layout}
+        name="nest-messages"
+        onFinish={onSave}
+        validateMessages={validateMessages}
+      >
         <Form.Item
-          name={['customer', 'email']}
-          label="Email"
-          rules={[
-            {
-              type: 'email',
-              required: true,
-            },
-          ]}
-        >
-          <Input disabled={data?._id} />
-        </Form.Item>
-        <Form.Item
-          name={['customer', 'name']}
-          label="Name"
-          rules={[
-            {
-              required: true,
-            },
-          ]}
-        >
-          <Input />
-        </Form.Item>
-        <Form.Item
-          name={['customer', 'phone']}
-          label="Phone"
+          name={["schedule", "employee-name"]}
+          label="Employee Name"
           rules={[
             {
               required: true,
@@ -66,15 +57,45 @@ const AddScheduleModal = ({ data, loading, open, onClose, onSave }) => {
           <Input />
         </Form.Item>
         <Form.Item
-          name={['customer', 'address']}
-          label="Address"
+          name={["schedule", "department"]}
+          label="Department"
           rules={[
             {
               required: true,
             },
           ]}
         >
-          <Input.TextArea />
+          <Input />
+        </Form.Item>
+        <Form.Item
+          name={["schedule", "designation"]}
+          label="Designation"
+          rules={[
+            {
+              required: true,
+            },
+          ]}
+        >
+          <Input />
+        </Form.Item>
+        <Form.Item
+          name={["schedule", "description"]}
+          label="Description"
+          rules={[
+            {
+              required: true,
+            },
+          ]}
+        >
+          <Input />
+        </Form.Item>
+        <Form.Item
+          name={["schedule", "date"]}
+          label="Date"
+          rules={[{ required: true }]}
+          shouldUpdate
+        >
+          <DatePicker format={dateFormat} />
         </Form.Item>
         <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
           <Button type="primary" htmlType="submit" loading={loading}>

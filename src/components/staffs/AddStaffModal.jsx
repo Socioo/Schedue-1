@@ -32,7 +32,7 @@ const AddStaffModal = ({ data, loading, open, onClose, onSave }) => {
     <Modal title="Add Staff" visible={open} footer={null} onOk={onClose} onCancel={onClose}>
       <Form shouldUpdate form={form} {...layout} name="nest-messages" onFinish={onSave} validateMessages={validateMessages}>
         <Form.Item
-          name={['customer', 'email']}
+          name={['staff', 'email']}
           label="Email"
           rules={[
             {
@@ -44,7 +44,7 @@ const AddStaffModal = ({ data, loading, open, onClose, onSave }) => {
           <Input disabled={data?._id} />
         </Form.Item>
         <Form.Item
-          name={['customer', 'name']}
+          name={['staff', 'name']}
           label="Name"
           rules={[
             {
@@ -55,7 +55,7 @@ const AddStaffModal = ({ data, loading, open, onClose, onSave }) => {
           <Input />
         </Form.Item>
         <Form.Item
-          name={['customer', 'phone']}
+          name={['staff', 'phone']}
           label="Phone"
           rules={[
             {
@@ -66,7 +66,7 @@ const AddStaffModal = ({ data, loading, open, onClose, onSave }) => {
           <Input />
         </Form.Item>
         <Form.Item
-          name={['customer', 'address']}
+          name={['staff', 'address']}
           label="Address"
           rules={[
             {

@@ -33,7 +33,7 @@ const AddUserModal = ({ loading, open, onClose, onSave }) => {
     <Modal title= "Add User" visible={open} footer={null} onOk={onClose} onCancel={onClose}>
       <Form shouldUpdate form={form} {...layout} name="nest-messages" onFinish={onSave} validateMessages={validateMessages}>
         <Form.Item
-          name={['customer', 'email']}
+          name={['user', 'email']}
           label="Email"
           rules={[
             {
@@ -45,7 +45,7 @@ const AddUserModal = ({ loading, open, onClose, onSave }) => {
           <Input />
         </Form.Item>
         <Form.Item
-          name={['customer', 'first_name']}
+          name={['user', 'first_name']}
           label="First Name"
           rules={[
             {
@@ -56,7 +56,7 @@ const AddUserModal = ({ loading, open, onClose, onSave }) => {
           <Input />
         </Form.Item>
         <Form.Item
-            name={['customer', 'last_name']}
+            name={['user', 'last_name']}
             label="Last Name"
             rules={[
               {
@@ -83,7 +83,7 @@ const AddUserModal = ({ loading, open, onClose, onSave }) => {
           </Select>
         </Form.Item>
         <Form.Item
-          name={['customer', 'phone_number']}
+          name={['user', 'phone_number']}
           label="Phone"
           rules={[
             {
@@ -94,7 +94,7 @@ const AddUserModal = ({ loading, open, onClose, onSave }) => {
           <Input />
         </Form.Item>
         <Form.Item
-          name={['customer', 'role']}
+          name={['user', 'role']}
           label="Role"
           rules={[
             {

@@ -108,10 +108,10 @@ const Authenticated = () => {
           }}
         >
           <Routes>
-            <Route path="/" elements={<Dashboard />} />
-            <Route path="/schedule" elements={<Schedule />} />
-            <Route path="/staffs" elements={<Staffs />} />
-            <Route path="/users" elements={<Users />} />
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/schedule" element={<Schedule />} />
+            <Route path="/staffs" element={<Staffs />} />
+            <Route path="/users" element={<Users />} />
           </Routes>
         </Content>
       </Layout>
