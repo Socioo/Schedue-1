@@ -18,8 +18,10 @@ git clone git@github.com:Socioo/Schedule-portal.git
 2. Install all UI Client dependencies
 
 ```bash
-npm install --no-lockfile --production=false --silent
-yarn install --no-lockfile --production=false --silent
+npm install 
+npm install antd
+npm install react-router-dom
+npm install react-big-calendar react-datepicker date-fns
 ```
 
 3. Start the Application 
