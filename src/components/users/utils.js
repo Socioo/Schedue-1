@@ -27,8 +27,8 @@ export const columns = [
   },
   {
     title: 'Phone No.',
-    dataIndex: 'phone_number',
-    key: 'phone_number',
+    dataIndex: 'phone',
+    key: 'phone',
   },
   {
     title: 'Role',
@@ -56,5 +56,44 @@ export const columns = [
         </Dropdown>
       </Space>
     ),
+  },
+];
+
+
+export const data = [
+  {
+    first_name: 'John',
+    last_name: 'Miguel',
+    email: 'abc@gmail.com',
+    gender:  'male',
+    phone: '0701085511',
+    role: 'Admin',
+  },
+  {
+    key: '2',
+    first_name: 'Jim',
+    last_name: 'Leclerc',
+    email: 'abc@gmail.com',
+    gender: 'male',
+    phone: '0701085511',
+    role: 'User',
+  },
+  {
+    key: '3',
+    first_name: 'Veronica',
+    last_name: 'Watkins',
+    email: 'abc@gmail.com',
+    gender: 'female',
+    phone: '0701085511',
+    role: 'User',
+  },
+  {
+    key: '4',
+    first_name: 'Elias',
+    last_name: 'Ozansoy',
+    email: 'abc@gmail.com',
+    gender: 'male',
+    phone: '0701085511',
+    role: 'User',
   },
 ];

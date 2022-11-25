@@ -41,7 +41,7 @@ const AddStaffModal = ({ data, loading, open, onClose, onSave }) => {
             },
           ]}
         >
-          <Input disabled={data?._id} />
+          <Input />
         </Form.Item>
         <Form.Item
           name={['staff', 'name']}
@@ -57,6 +57,17 @@ const AddStaffModal = ({ data, loading, open, onClose, onSave }) => {
         <Form.Item
           name={['staff', 'phone']}
           label="Phone"
+          rules={[
+            {
+              required: true,
+            },
+          ]}
+        >
+          <Input />
+        </Form.Item>
+        <Form.Item
+          name={["schedule", "department"]}
+          label="Department"
           rules={[
             {
               required: true,

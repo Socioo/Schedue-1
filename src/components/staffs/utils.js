@@ -20,6 +20,11 @@ export const columns = [
     key: 'phone',
   },
   {
+    title: 'Department',
+    dataIndex: 'department',
+    key: 'department',
+  },
+  {
     title: 'Address',
     dataIndex: 'address',
     key: 'address',
@@ -45,5 +50,40 @@ export const columns = [
         </Dropdown>
       </Space>
     ),
+  },
+];
+
+export const data = [
+  {
+    key: '1',
+    name: 'John Brown',
+    email: 'abc@gmail.com',
+    phone:  '0701085511',
+    department: 'Web Team',
+    address: 'New York No. 1 Lake Park',
+  },
+  {
+    key: '2',
+    name: 'Jim Green',
+    email: 'abc@gmail.com',
+    phone: '0701085511',
+    department: 'Graphics Desgine',
+    address: 'London No. 1 Lake Park',
+  },
+  {
+    key: '3',
+    name: 'Joe Black',
+    email: 'abc@gmail.com',
+    phone: '0701085511',
+    department: 'Cyber Security',
+    address: 'Sidney No. 1 Lake Park',
+  },
+  {
+    key: '4',
+    name: 'Jim Red',
+    email: 'abc@gmail.com',
+    phone: '0701085511',
+    department: 'Virtual Reality',
+    address: 'London No. 2 Lake Park',
   },
 ];

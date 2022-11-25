@@ -21,6 +21,10 @@ const { Header, Sider, Content } = Layout;
 const Authenticated = () => {
   const [collapsed, setCollapsed] = useState(false);
   const navigate = useNavigate();
+  const handleClick=()=>{
+    localStorage.clear();
+    window.location.reload();
+  }
 
   return (
     <Layout
@@ -57,9 +61,9 @@ const Authenticated = () => {
               onClick: () => navigate("/staffs"),
             },
             {
-              key: "users",
+              key: "facilitator",
               icon: <UserOutlined />,
-              label: "Users",
+              label: "Facilitators",
               onClick: () => navigate("/users"),
             },
           ]}
@@ -93,6 +97,7 @@ const Authenticated = () => {
                 style={{
                   borderRadius: "5px",
                 }}
+                onClick={handleClick}
               >
                 Logout
               </Button>

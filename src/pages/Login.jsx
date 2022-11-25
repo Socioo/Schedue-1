@@ -1,9 +1,36 @@
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
-import { Button, Checkbox, Form, Input  } from 'antd';
-import React from 'react';
+import { Button, Checkbox, Form, Input, Alert } from 'antd';
+import React, { useState } from 'react';
 import logo from '../assets/AP.png';
+import Home from '../pages/Authenticated';
 
 const Login = () => { 
+
+  const [emaillog, setEmaillog] = useState(" ");
+  const [passwordlog, setPasswordlog] = useState(" ");
+
+  const [flag, setFlag] = useState(false);
+
+  const [home, setHome] = useState(true);
+
+  function handleLogin(e) {
+    e.preventDefault();
+    let pass = localStorage
+      .getItem("sanskarPassword")
+      .replace(/"/g, "");
+    let mail = localStorage.getItem("sanskarEmail").replace(/"/g, "");
+    
+
+    if (!emaillog || !passwordlog) {
+      setFlag(true);
+      console.log("EMPTY");
+    } else if (passwordlog !== pass || emaillog !== mail) {
+      setFlag(true);
+    } else {
+      setHome(!home);
+      setFlag(false);
+    }
+  }
 
   return (
     <div 
@@ -13,7 +40,9 @@ const Login = () => {
         opacity: "0.9",
         zIndex:  "-1",
        }}>
+        {home ? (
       <Form
+        onSubmit={handleLogin}
         style={{          
           boxSizing: "border-box",          
           borderRadius: "5px",
@@ -40,7 +69,7 @@ const Login = () => {
             },
           ]}
         >
-          <Input type="email" prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Email" />
+          <Input type="email" prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Email" onChange={(event) => setEmaillog(event.target.value)} />
         </Form.Item>
         <Form.Item
           name="password"
@@ -55,6 +84,7 @@ const Login = () => {
             prefix={<LockOutlined className="site-form-item-icon" />}
             type="password"
             placeholder="Password"
+            onChange={(event) => setPasswordlog(event.target.value)}
           />
         </Form.Item>
         <Form.Item>
@@ -75,7 +105,13 @@ const Login = () => {
             Log in
           </Button>
         </Form.Item>
+        {flag && (
+            <Alert message="Fill correct Info else keep trying." />
+          )}
       </Form>
+      ) : (
+        <Home />
+      )}
     </div>
   );
 };
