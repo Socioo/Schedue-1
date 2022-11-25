@@ -46,8 +46,8 @@ const AddScheduleModal = ({ data, loading, open, onClose, onSave }) => {
         validateMessages={validateMessages}
       >
         <Form.Item
-          name={["schedule", "employee-name"]}
-          label="Employee Name"
+          name={["schedule", "staff-name"]}
+          label="Staff Name"
           rules={[
             {
               required: true,
@@ -68,8 +68,19 @@ const AddScheduleModal = ({ data, loading, open, onClose, onSave }) => {
           <Input />
         </Form.Item>
         <Form.Item
-          name={["schedule", "designation"]}
-          label="Designation"
+          name={["schedule", "number-participants"]}
+          label="Number Of Participants"
+          rules={[
+            {
+              required: true,
+            },
+          ]}
+        >
+          <Input />
+        </Form.Item>
+        <Form.Item
+          name={["schedule", "location"]}
+          label="Location"
           rules={[
             {
               required: true,

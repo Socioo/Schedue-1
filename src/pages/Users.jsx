@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, Table, Typography } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
 import { columns } from "../components/users/utils";
+import { data } from "../components/users/utils";
 import AddUserModal from "../components/users/AddUserModal";
 
 const { Title } = Typography;
@@ -12,7 +13,7 @@ export default function Users() {
   return (
     <div>
       <div style={{ padding: "20px" }} />
-      <Title style={{ textAlign: "center" }}>Users</Title>
+      <Title style={{ textAlign: "center" }}>Facilitators</Title>
       <div style={{ padding: "20px" }} />
       <div style={{ textAlign: "right" }}>
         <Button
@@ -22,13 +23,14 @@ export default function Users() {
           onClick={() => setShowAddUser(true)}
           style={{ borderRadius: "5px" }}
         >
-          Add User
+          Add Facilitator
         </Button>
       </div>
       <div style={{ padding: "20px" }} />
       <Table 
         rowKey="_id" 
         columns={columns} 
+        dataSource={data}
         size="middle" 
         />
       <AddUserModal 

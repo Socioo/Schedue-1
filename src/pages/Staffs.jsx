@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, Table, Typography } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
 import { columns } from "../components/staffs/utils";
+import { data } from "../components/staffs/utils";
 import AddStaffModal from "../components/staffs/AddStaffModal";
 
 const { Title } = Typography;
@@ -22,11 +23,11 @@ export default function Staffs() {
           onClick={() => setShowAddStaff(true)}
           style={{ borderRadius: "5px" }}
         >
-          Add User
+          Add Staff
         </Button>
       </div>
       <div style={{ padding: "20px" }} />
-      <Table rowKey="_id" columns={columns} size="middle" />
+      <Table rowKey="_id" columns={columns} dataSource={data} size="middle" />
       <AddStaffModal
         open={showAddStaff}
         onClose={() => setShowAddStaff(false)}

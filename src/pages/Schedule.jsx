@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button, Table, Typography } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import { columns } from '../components/schedule/utils';
+import { data } from "../components/schedule/utils";
 import AddScheduleModal from '../components/schedule/AddScheduleModal';
 
 
@@ -31,6 +32,7 @@ export default function Schedule() {
             <Table
                 rowKey="_id"
                 columns={columns}
+                dataSource={data}
                 size="middle"
             />
             <AddScheduleModal
